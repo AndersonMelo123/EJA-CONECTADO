@@ -10,19 +10,19 @@ Uso de classes para criação de bloco de informação.
 */
 
 var listaPalavrasArray = [
-  "Lá", "Oi", "Eu", "Seu", "Tu",
-  "Lápis", "Bola", "Rosa", "Coca", "Bolo",
-  "Viola", "Batata", "Macaco", "Janela", "Salada",
-  "Sabonete", "Macaxeira", "Receita", "Quebrado", "Acordar"
+  "SOL", "MAR", "CRU", "FÉ", "PÉ", "PÁ", "PÃO", "CÉU", "LÃ",
+  "LINDO", "FEIO", "CASA", "LIXO", "MESA", "CHATO", "BRUTO", "FIEL", "FACA", "GATO",
+  "BANANA", "MENINO", "LARANJA", "CIDADE", "XÍCARA", "SINCERO", "TÍMIDO", "HONESTO", "DECENTE", "BONDOSO",
+  "SABONETE", "TERREIRO", "CAVALETE", "TELEFONE", "GUARDANAPO", "AFETIVO", "ATREVIDO", "CORAJOSO", "EGOÍSTA", "EDUCADO",
 ];
 
 
 
 var palavrasQuebradas = [
-  "Lá", "Oi", "Eu", "Seu", "Tu",
-  "Lá - pis", "Bo - la", "Ro - Sa", "Co - ca", "Bo - lo",
-  "Vi - o - la", "Ba - ta - ta", "Ma - ca - co", "Ja - ne - la", "Sa - la - da",
-  "Sa - bo - ne - te", "Ma - ca - xei - ra", "Re - cei - ta", "Que - bra - do", "A - cor - dar"
+  "SOL", "MAR", "CRU", "FÉ", "PÉ", "PÁ", "PÃO", "CÉU", "LÃ",
+  "LIN - DO", "FEI - O", "CA - SA", "LI - XO", "ME - SA", "CHA - TO", "BRU - TO", "FI - EL", "FA - CA", "GA - TO",
+  "BA - NA - NA", "ME - NI - NO", "LA - RAN - JA", "CI - DA - DE", "XÍ - CA - RA", "SIN - CE - RO", "TÍ - MI - DO", "HO - NES - TO", "DE - CEN - TE", "BON - DO - SO",
+  "SA - BO - NE - TE", "TER - REI - RO", "CA - VA - LE - TE", "TE - LE - FO - NE", "GUAR - DA - NA - PO", "A - FE - TI - VO", "A - TRE - VI - DO", "CO - RA - JO - SO", "E - GO - ÍS - TA", "E - DU - CA - DO",
 ];
 
 
@@ -51,7 +51,7 @@ var btSomImg;
 
 var btSomImgVetor;
 
-var numBlocos = 20;
+var numBlocos = 39;
 
 var blocoAtual = 0;
 
@@ -70,9 +70,11 @@ function setup() {
   frameRate(15);
   createCanvas(innerWidth, innerHeight);
 
+
   btProxImgVetor = createVector((width / 12) * 10.6, (innerHeight / 10) * 3.3);
   btSomImgVetor = createVector((width / 12) * 10.6, (innerHeight / 10) * 2);
   btVoltarImgVetor = createVector((width / 12) * 11,(innerHeight / 10) * 1.5);
+
 
 
   for(var i = 0; i < numBlocos; i++) {

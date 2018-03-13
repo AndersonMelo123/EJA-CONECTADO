@@ -10,19 +10,19 @@ Uso de classes para criação de bloco de informação.
 */
 
 var listaPalavrasArray = [
-  "Lá", "Oi", "Eu", "Seu", "Tu",
-  "Lápis", "Bola", "Rosa", "Coca", "Bolo",
-  "Viola", "Batata", "Macaco", "Janela", "Salada",
-  "Sabonete", "Macaxeira", "Receita", "Quebrado", "Acordar"
+  "dar", "ir", "rir", "ser", "ter", "ver", "crer", "pôr", "ler",
+  "cantar", "falar", "bater", "fazer", "virar", "errar", "lutar", "unir", "comer", "saber",
+  "estudar", "receber", "aprender", "proteger", "começar", "colocar", "precisar", "conversar", "trabalhar", "repetir",
+  "acontecer", "participar", "apresentar", "aproveitar", "considerar", "despedir", "reconhecer", "desocupar", "comunicar", "desaparecer",
 ];
 
 
 
 var palavrasQuebradas = [
-  "Lá", "Oi", "Eu", "Seu", "Tu",
-  "Lá - pis", "Bo - la", "Ro - Sa", "Co - ca", "Bo - lo",
-  "Vi - o - la", "Ba - ta - ta", "Ma - ca - co", "Ja - ne - la", "Sa - la - da",
-  "Sa - bo - ne - te", "Ma - ca - xei - ra", "Re - cei - ta", "Que - bra - do", "A - cor - dar"
+  "dar", "ir", "rir", "ser", "ter", "ver", "crer", "pôr", "ler",
+  "can - tar", "fa - lar", "ba - ter", "fa - zer", "vi - rar", "er - rar", "lu - tar", "u - nir", "co - mer", "sa - ber",
+  "es - tu - dar", "re - ce - ber", "a - pren - der", "pro - te - ger", "co - me - çar", "co - lo - car", "pre - ci - sar", "con - ver - sar", "tra - ba - lhar", "re - pe - tir",
+  "a - con - te - cer", "par - ti - ci - par", "a - pre - sen - tar", "a - pro - vei - tar", "con - si - de - rar", "des - pe - dir", "re - co - nhe - cer", "de - so - cu - par", "co - mu - ni - car", "de - sa - pa - re - cer",
 ];
 
 
@@ -51,7 +51,7 @@ var btSomImg;
 
 var btSomImgVetor;
 
-var numBlocos = 20;
+var numBlocos = 39;
 
 var blocoAtual = 0;
 
@@ -73,6 +73,7 @@ function setup() {
   btProxImgVetor = createVector((width / 12) * 10.6, (innerHeight / 10) * 3.3);
   btSomImgVetor = createVector((width / 12) * 10.6, (innerHeight / 10) * 2);
   btVoltarImgVetor = createVector((width / 12) * 11,(innerHeight / 10) * 1.5);
+
 
 
   for(var i = 0; i < numBlocos; i++) {
