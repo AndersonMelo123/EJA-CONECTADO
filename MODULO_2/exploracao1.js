@@ -5,150 +5,24 @@ usando os novos padrões ECMASCRIPT6.
 
 Uso de classes para criação de bloco de informação.
 
-//DATE(12/02/2018)
+//DATE(13/03/2018)
 
 */
 
-
-//
-// ███████╗  ██╗  ██╗      █████╗   ██████╗    █████╗   ███████╗
-// ██╔════╝  ██║  ██║     ██╔══██╗  ██╔══██╗  ██╔══██╗  ██╔════╝
-// ███████╗  ██║  ██║     ███████║  ██████╔╝  ███████║  ███████╗
-// ╚════██║  ██║  ██║     ██╔══██║  ██╔══██╗  ██╔══██║  ╚════██║
-// ███████║  ██║  ███████╗██║  ██║  ██████╔╝  ██║  ██║  ███████║
-// ╚══════╝  ╚═╝  ╚══════╝╚═╝  ╚═╝  ╚═════╝   ╚═╝  ╚═╝  ╚══════╝
-//
-
-var listaSilabasArray = [
-"Ba", "Be", "Bi", "Bo", "Bu",
-"Ca", "Ce", "Ci", "Co", "Cu",
-"Da", "De", "Di", "Do", "Du",
-"Fa", "Fe", "Fi", "Fo", "Fu",
-"Ga", "Ge", "Gi", "Go", "Gu",
-"Ha", "He", "Hi", "Ho", "Hu",
-"Ja", "Je", "Ji", "Jo", "Ju",
-"ka", "Ke", "Ki", "Ku",
-"La", "Le", "Li", "Lo", "Lu",
-"Ma", "Me", "Mi", "Mo", "Mu",
-"Na", "Ne", "Ni", "No", "Nu",
-"Pa", "Pe", "Pi", "Po", "Pu",
-"Qa", "Qe", "Qi", "Qo",
-"Ra", "Re", "Ri", "Ro", "Ru",
-"Sa", "Se", "Si", "So", "Su",
-"Ta", "Te", "Ti", "To", "Tu",
-"Va", "Ve", "Vi", "Vo", "Vu",
-"Xa", "Xe", "Xi",
-"Za", "Ze", "Zi", "Zo", "Zu"
+var listaPalavrasArray = [
+  "Lá", "Oi", "Eu", "Seu", "Tu",
+  "Lápis", "Bola", "Rosa", "Coca", "Bolo",
+  "Viola", "Batata", "Macaco", "Janela", "Salada",
+  "Sabonete", "Macaxeira", "Receita", "Quebrado", "Acordar"
 ];
 
 
 
-
-
-//
-// ██████╗  █████╗ ██╗      █████╗ ██╗   ██╗██████╗  █████╗ ███████╗
-// ██╔══██╗██╔══██╗██║     ██╔══██╗██║   ██║██╔══██╗██╔══██╗██╔════╝
-// ██████╔╝███████║██║     ███████║██║   ██║██████╔╝███████║███████╗
-// ██╔═══╝ ██╔══██║██║     ██╔══██║╚██╗ ██╔╝██╔══██╗██╔══██║╚════██║
-// ██║     ██║  ██║███████╗██║  ██║ ╚████╔╝ ██║  ██║██║  ██║███████║
-// ╚═╝     ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
-//
-
-
-
-
-var palavras = [
-"Balde", "Balança", "Barco",
-"Beleza", "Besta", "Beliscar",
-"Biscoito", "Bipolar", "Bisnaga",
-"Bolo", "Bom", "Bonito",
-"Buraco", "Burocracia", "Bucho",
-"Casa", "Caixa", "Calabresa",
-"Céu", "Cera", "Celular",
-"Cirurgia", "Cinico", "Ciência",
-"Colar", "Cobrir", "Cobrar",
-"Cursica", "Curso", "Curió",
-"Dado", "Dar", "Danado",
-"Dedo", "Descolar", "Desfazer",
-"Discar", "Disse", "Disco",
-"Dor", "Dose", "Dobrar",
-"Duro", "Durante", "Dual",
-"Faca", "Fazer", "Falar",
-"Fedor", "Feliz", "Feira",
-"Ficar", "Filho", "Final",
-"Folha", "Força", "Fora",
-"Furar", "Fuga", "Furia",
-"Galho", "Garfo", "Gaiato",
-"Gelo", "Geral", "Genio",
-"Girar", "Giz", "Girassol",
-"Goiaba", "Gostar", "Gol",
-"Gustavo", "Guia", "Guerra",
-"Habito", "Halito", "Haste",
-"Helio", "Hesitar", "Herege",
-"Historia", "Higiene", "Histerico",
-"Houve", "Hoje", "Hospital",
-"Hugo", "Humilhar", "Humano",
-"Jato", "Jarra", "Janela",
-"Jeito", "Jerimum", "Jeans",
-"Jiboia", "Jiló", "Jipe",
-"Joia", "Jovem", "Jogo",
-"Julgar", "Justo", "Julho",
-"Karaokê", "Kaiser", "Kart",
-"Ketchup", "Kelvin", "Keppler",
-"Kilo", "Kilograma", "Kilometro",
-"Kung fu", "Kurt", "Kuririn",
-"Lapis", "Lavrar", "Lamento",
-"Lepra", "Leso", "Leite",
-"Livro", "Lindo", "Liberdade",
-"Logo", "Lotado", "Longe",
-"Lugar", "Luz", "Lucro",
-"Mar", "Mastigar", "Maçã",
-"Mesa", "Mês", "Melhor",
-"Mito", "Ministro", "Milho",
-"Mosca", "Morar", "Morrer",
-"Muro", "Murro", "Musculo",
-"Nariz", "Não", "Nascer",
-"Neve", "Negocio", "Nenhum",
-"Ninho", "Nitido", "Nivel",
-"Novela", "Novo", "Normal",
-"Nuvem", "Nunca", "Nublado",
-"Pato", "Parir", "Partilha",
-"Peito", "Pera", "Peso",
-"Pistola", "Pirê", "Piedade",
-"Pote", "Porta", "Por",
-"Puro", "Pudim", "Puxar",
-"Quanto", "Quando", "Qual",
-"Quente", "Quero", "Queijo",
-"Quitar", "Quiser", "Quieto",
-"Quota", "Quotidiano", "Quorum",
-"Rato", "Raiz", "Rasgo",
-"Reta", "Reprise", "Refazer",
-"Rico", "Riso", "Ridiculo",
-"Rosto", "Roer", "Rodar",
-"Rua", "Rural", "Ruim",
-"Sapato", "Sal", "Sair",
-"Sempre", "Ser", "Sentido",
-"Sino", "Silaba", "Saco",
-"Soro", "Sozinho", "Soco",
-"Suco", "Surra", "Subir",
-"Tapioca", "Tatu", "Talvez",
-"Telha", "Telefone", "Tecidos",
-"Timido", "Tipico", "Tipo",
-"Tomate", "Toalha", "Toco",
-"Tutela", "Turbo", "Turco",
-"Vazio", "Vago", "Vaca",
-"Velho", "Veloz", "Verdade",
-"Vida", "Video", "Vila",
-"Vó", "Você", "Vontade",
-"Vulto", "Vulgar", "Vulneravel",
-"Xale", "Xadrez", "Xará",
-"Xerife", "Xereta", "Xerox",
-"Xicara", "Xixi", "Xingar",
-"Zangado", "Zarolho", "Zangão",
-"Zero", "Zezinho", "Zeppelin",
-"Zipper", "Zigoto", "Zica",
-"Zorro", "Zoologico", "Zombar",
-"Zumba", "Zumbi", "Zureta"
+var palavrasQuebradas = [
+  "Lá", "Oi", "Eu", "Seu", "Tu",
+  "Lá - pis", "Bo - la", "Ro - Sa", "Co - ca", "Bo - lo",
+  "Vi - o - la", "Ba - ta - ta", "Ma - ca - co", "Ja - ne - la", "Sa - la - da",
+  "Sa - bo - ne - te", "Ma - ca - xei - ra", "Re - cei - ta", "Que - bra - do", "A - cor - dar"
 ];
 
 
@@ -169,11 +43,15 @@ var btProxImg;
 
 var btProxImgVetor;
 
+var btVoltarImg;
+
+var btVoltarImgVetor;
+
 var btSomImg;
 
 var btSomImgVetor;
 
-var numBlocos = 91;
+var numBlocos = 20;
 
 var blocoAtual = 0;
 
@@ -182,21 +60,23 @@ var blocos = [];
 function preload() {
   bkgImg = loadImage("../RECURSOS/IMAGENS/back-mapa2.png");
   btProxImg = loadImage("../RECURSOS/IMAGENS/seta.png");
+  btVoltarImg = loadImage("../RECURSOS/IMAGENS/seta.png");
   btSomImg = loadImage("../RECURSOS/IMAGENS/02.png");
 }
 
 function setup() {
 
-  // console.log(listaSilabasArray.length);
-
+  angleMode(DEGREES)
   frameRate(15);
   createCanvas(innerWidth, innerHeight);
 
   btProxImgVetor = createVector((width / 12) * 8, (innerHeight / 10) * 2);
   btSomImgVetor = createVector((width / 12) * 7, (innerHeight / 10) * 2);
+  btVoltarImgVetor = createVector((width / 12) * 4,(innerHeight / 10) * 2.7);
+
 
   for(var i = 0; i < numBlocos; i++) {
-    blocos[i] = new Bloco(listaSilabasArray[i], palavras[3*i], palavras[3*i+1], palavras[3*i+2]);
+    blocos[i] = new Bloco(listaPalavrasArray[i], palavrasQuebradas[i]);
   }
 
   blocos[0].tocar();
@@ -207,15 +87,32 @@ function draw() {
   background(bkgImg);
   blocos[blocoAtual].mostrar();
   image(btProxImg, btProxImgVetor.x, btProxImgVetor.y, 50, 50);
+  push();
+  rotate(180);
+  image(btVoltarImg, -btVoltarImgVetor.x, -btVoltarImgVetor.y, 50, 50);
+  pop();
   image(btSomImg, btSomImgVetor.x, btSomImgVetor.y, 50, 50);
 
 }
 
 function mousePressed() {
 
-  var centroImgX =  btProxImgVetor.x + btProxImg.width/4 -20;
-  var centroImgY =  btProxImgVetor.y + btProxImg.height/6 -20;
+
+  var centroImgX =  btVoltarImgVetor.x + btVoltarImg.width/4 -80;
+  var centroImgY =  btVoltarImgVetor.y + btVoltarImg.height/6 -75;
   var distancia = dist(mouseX, mouseY, centroImgX, centroImgY);
+
+  if(distancia < 50) {
+    blocoAtual--;
+    if(blocoAtual < 0) {
+      blocoAtual = numBlocos-1;
+    }
+    blocos[blocoAtual].tocar();
+  }
+
+  centroImgX =  btProxImgVetor.x + btProxImg.width/4 -20;
+  centroImgY =  btProxImgVetor.y + btProxImg.height/6 -24;
+  distancia = dist(mouseX, mouseY, centroImgX, centroImgY);
 
   if(distancia < 50) {
     blocoAtual++;
@@ -241,25 +138,19 @@ function mousePressed() {
 
 class Bloco {
 
-  constructor(listaSilabas, palavra1, palavra2, palavra3) {
-    this.listaSilabas = listaSilabas;
-    this.palavra1 = palavra1;
-    this.palavra2 = palavra2;
-    this.palavra3 = palavra3;
+  constructor(palavra, palavrasQuebrada) {
+    this.palavra = palavra;
+    this.palavrasQuebrada = palavrasQuebrada;
   }
 
   mostrar() {
-    // textFont(fonte);
     textSize(85);
     fill(255);
     var alturaPalavras = 45;
     var scl = 80;
-    var t1 = text(this.palavra1, 8 * (innerWidth / scl), alturaPalavras * (innerHeight / scl));
-    text(this.palavra2, 12 * (innerWidth / scl), (12 + alturaPalavras) * (innerHeight / scl));
-    text(this.palavra3, 16 * (innerWidth / scl), (24 + alturaPalavras) * (innerHeight / scl));
+    var t1 = text(this.palavrasQuebrada, 8 * (innerWidth / scl), alturaPalavras * (innerHeight / scl));
     textSize(100);
-    // console.log(t1.pos.x);
-    text(this.listaSilabas, 34 * (innerWidth / scl), 25 * (innerHeight / scl));
+    text(this.palavra, 34 * (innerWidth / scl), 25 * (innerHeight / scl));
     fill(0);
   }
 
