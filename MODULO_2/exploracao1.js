@@ -26,17 +26,6 @@ var palavrasQuebradas = [
 ];
 
 
-
-//
-// ██╗      ██████╗  ██████╗ ██╗ ██████╗ █████╗
-// ██║     ██╔═══██╗██╔════╝ ██║██╔════╝██╔══██╗
-// ██║     ██║   ██║██║  ███╗██║██║     ███████║
-// ██║     ██║   ██║██║   ██║██║██║     ██╔══██║
-// ███████╗╚██████╔╝╚██████╔╝██║╚██████╗██║  ██║
-// ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝ ╚═════╝╚═╝  ╚═╝
-//
-
-
 var bkgImg;
 
 var btProxImg;
@@ -138,9 +127,9 @@ function mousePressed() {
 
 class Bloco {
 
-  constructor(palavra, palavrasQuebrada) {
+  constructor(palavra, palavraQuebrada) {
     this.palavra = palavra;
-    this.palavrasQuebrada = palavrasQuebrada;
+    this.palavraQuebrada = palavraQuebrada;
   }
 
   mostrar() {
