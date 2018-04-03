@@ -138,9 +138,7 @@ class Bloco {
     var alturaPalavras = 50;
     var scl = 80;
     textAlign(CENTER);
-    var x = 35 * (innerWidth / scl);
-    var y = alturaPalavras * (innerHeight / scl);
-    //text(this.palavrasQuebrada, 35 * (innerWidth / scl), alturaPalavras * (innerHeight / scl));
+    text(this.palavraQuebrada, 35 * (innerWidth / scl), alturaPalavras * (innerHeight / scl));
     textSize(100);
     text(this.palavra, 34 * (innerWidth / scl), 25 * (innerHeight / scl));
     fill(0);
