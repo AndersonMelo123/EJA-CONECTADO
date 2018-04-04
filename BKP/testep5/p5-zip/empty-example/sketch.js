@@ -12,9 +12,6 @@ Uso de classes para criação de bloco de informação.
 
 
 
-var bkgImg;
-var btProxImg;
-var btProxImgVetor;
 
 var imgs = [];
 
@@ -34,6 +31,9 @@ var blocoAtual = 0;
 var blocos = [];
 
 var fonte;
+var bkgImg;
+var btProxImg;
+var btProxImgVetor;
 
 function preload() {
   bkgImg = loadImage("RECURSOS/IMAGENS/back-mapa2.png");
@@ -126,6 +126,4 @@ class Bloco {
   tocar() {
     this.audio.play();
   }
-
-
 }

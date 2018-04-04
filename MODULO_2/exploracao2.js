@@ -66,7 +66,7 @@ function preload() {
 
 function setup() {
 
-  angleMode(DEGREES)
+  angleMode(DEGREES);
   frameRate(15);
   createCanvas(innerWidth, innerHeight);
 
@@ -122,7 +122,7 @@ function mousePressed() {
     }
     blocos[blocoAtual].tocar();
   }
-
+  
   var inicioBtSomX = btSomImgVetor.x;
   var inicioBtSomY = btSomImgVetor.y;
 
