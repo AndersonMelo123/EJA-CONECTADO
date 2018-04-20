@@ -9,20 +9,16 @@ Uso de classes para criação de bloco de informação.
 
 */
 
-var listaPalavrasArray = [
-  "Lá", "Oi", "Eu", "Seu", "Tu",
-  "Lápis", "Bola", "Rosa", "Coca", "Bolo",
-  "Viola", "Batata", "Macaco", "Janela", "Salada",
-  "Sabonete", "Macaxeira", "Receita", "Quebrado", "Acordar"
-];
+var listaPalavrasArray = ['Lá', 'Oi', 'Eu', 'Seu', 'Tu', 'Lápis', 'Bola', 'Rosa', 'Coca', 'Bolo',
+'Viola', 'Batata', 'Macaco', 'Janela', 'Salada', 'Sabonete', 'Macaxeira', 'Receita', 'Quebrado', 'Acordar'];
 
 
 
 var palavrasQuebradas = [
-  "Lá", "Oi", "Eu", "Seu", "Tu",
-  "Lá - pis", "Bo - la", "Ro - Sa", "Co - ca", "Bo - lo",
-  "Vi - o - la", "Ba - ta - ta", "Ma - ca - co", "Ja - ne - la", "Sa - la - da",
-  "Sa - bo - ne - te", "Ma - ca - xei - ra", "Re - cei - ta", "Que - bra - do", "A - cor - dar"
+  'Lá', 'Oi', 'Eu', 'Seu', 'Tu',
+  'Lá - pis', 'Bo - la', 'Ro - Sa', 'Co - ca', 'Bo - lo',
+  'Vi - o - la', 'Ba - ta - ta', 'Ma - ca - co', 'Ja - ne - la', 'Sa - la - da',
+  'Sa - bo - ne - te', 'Ma - ca - xei - ra', 'Re - cei - ta', 'Que - bra - do', 'A - cor - dar'
 ];
 
 
@@ -47,24 +43,23 @@ var blocoAtual = 0;
 var blocos = [];
 
 function preload() {
-  bkgImg = loadImage("../RECURSOS/IMAGENS/back-mapa2.png");
-  btProxImg = loadImage("../RECURSOS/IMAGENS/seta.png");
-  btVoltarImg = loadImage("../RECURSOS/IMAGENS/seta.png");
-  btSomImg = loadImage("../RECURSOS/IMAGENS/02.png");
+  bkgImg = loadImage('../RECURSOS/IMAGENS/back-mapa2.png');
+  btProxImg = loadImage('../RECURSOS/IMAGENS/seta.png');
+  btVoltarImg = loadImage('../RECURSOS/IMAGENS/seta.png');
+  btSomImg = loadImage('../RECURSOS/IMAGENS/02.png');
 }
 
 function setup() {
 
-  angleMode(DEGREES)
+  angleMode(DEGREES);
   frameRate(15);
   createCanvas(innerWidth, innerHeight);
 
   btProxImgVetor = createVector((width / 12) * 10.6, (innerHeight / 10) * 3.3);
   btSomImgVetor = createVector((width / 12) * 10.6, (innerHeight / 10) * 2);
-  btVoltarImgVetor = createVector((width / 12) * 11,(innerHeight / 10) * 1.5);
+  btVoltarImgVetor = createVector((width / 12) * 11, (innerHeight / 10) * 1.5);
 
-
-  for(var i = 0; i < numBlocos; i++) {
+  for (var i = 0; i < numBlocos; i++) {
     blocos[i] = new Bloco(listaPalavrasArray[i], palavrasQuebradas[i]);
   }
 
@@ -86,28 +81,29 @@ function draw() {
 
 function mousePressed() {
 
-
-  var centroImgX =  btVoltarImgVetor.x + btVoltarImg.width/4 -80;
-  var centroImgY =  btVoltarImgVetor.y + btVoltarImg.height/6 -75;
+  var centroImgX = btVoltarImgVetor.x + btVoltarImg.width / 4 - 80;
+  var centroImgY = btVoltarImgVetor.y + btVoltarImg.height / 6 - 75;
   var distancia = dist(mouseX, mouseY, centroImgX, centroImgY);
 
-  if(distancia < 50) {
+  if (distancia < 50) {
     blocoAtual--;
-    if(blocoAtual < 0) {
-      blocoAtual = numBlocos-1;
+    if (blocoAtual < 0) {
+      blocoAtual = numBlocos - 1;
     }
+
     blocos[blocoAtual].tocar();
   }
 
-  centroImgX =  btProxImgVetor.x + btProxImg.width/4 -20;
-  centroImgY =  btProxImgVetor.y + btProxImg.height/6 -24;
+  centroImgX = btProxImgVetor.x + btProxImg.width / 4 - 20;
+  centroImgY = btProxImgVetor.y + btProxImg.height / 6 - 24;
   distancia = dist(mouseX, mouseY, centroImgX, centroImgY);
 
-  if(distancia < 50) {
+  if (distancia < 50) {
     blocoAtual++;
-    if(blocoAtual > numBlocos-1) {
+    if (blocoAtual > numBlocos - 1) {
       blocoAtual = 0;
     }
+
     blocos[blocoAtual].tocar();
   }
 
@@ -117,10 +113,10 @@ function mousePressed() {
   var fimBtSomX = btSomImgVetor.x + 50;
   var fimBtSomY = btSomImgVetor.y + 50;
 
-  if(mouseX > inicioBtSomX
-    && mouseX < fimBtSomX
-    && mouseY > inicioBtSomY
-    && mouseY < fimBtSomY) {
+  if (mouseX > inicioBtSomX &&
+    mouseX < fimBtSomX &&
+    mouseY > inicioBtSomY &&
+    mouseY < fimBtSomY) {
     blocos[blocoAtual].tocar();
   }
 }
@@ -145,7 +141,7 @@ class Bloco {
   }
 
   tocar() {
-    console.log("tocou");
+    console.log('tocou');
   }
 
 }
