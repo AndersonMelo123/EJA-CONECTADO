@@ -1,18 +1,16 @@
 /*
-
 Sketch para nova forma de implementação
 usando os novos padrões ECMASCRIPT6.
-
 Uso de classes para criação de bloco de informação.
-
 //DATE(13/03/2018)
 
+
+esversion :6
 */
+
 
 var listaPalavrasArray = ['Lá', 'Oi', 'Eu', 'Seu', 'Tu', 'Lápis', 'Bola', 'Rosa', 'Coca', 'Bolo',
 'Viola', 'Batata', 'Macaco', 'Janela', 'Salada', 'Sabonete', 'Macaxeira', 'Receita', 'Quebrado', 'Acordar'];
-
-
 
 var palavrasQuebradas = [
   'Lá', 'Oi', 'Eu', 'Seu', 'Tu',

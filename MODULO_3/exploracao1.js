@@ -190,6 +190,7 @@ function setup() {
   // console.log(listaSilabasArray.length);
 
   frameRate(15);
+  angleMode(DEGREES);
   createCanvas(innerWidth, innerHeight);
 
   btProxImgVetor = createVector((width / 12) * 8, (innerHeight / 10) * 2);
@@ -209,6 +210,18 @@ function draw() {
   image(btProxImg, btProxImgVetor.x, btProxImgVetor.y, 50, 50);
   image(btSomImg, btSomImgVetor.x, btSomImgVetor.y, 50, 50);
 
+  push();
+  rotate(180);
+  image(btProxImg, -((width / 12) * 4), -((innerHeight / 10) * 2.75), 50, 50);
+  pop();
+
+}
+
+function voltarBloco() {
+  blocoAtual--;
+  if (blocoAtual < 0) {
+    blocoAtual = numBlocos - 1;
+  }
 }
 
 function mousePressed() {
@@ -223,6 +236,12 @@ function mousePressed() {
       blocoAtual = 0;
     }
     blocos[blocoAtual].tocar();
+  }
+
+  var distanciaVoltar = dist(mouseX, mouseY, (width / 12) * 3.8, (innerHeight / 10) * 2.4);
+
+  if(distanciaVoltar < 50) {
+    voltarBloco();
   }
 
   var inicioBtSomX = btSomImgVetor.x;
