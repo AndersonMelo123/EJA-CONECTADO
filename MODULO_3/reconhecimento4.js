@@ -64,6 +64,9 @@ var posInput;
 
 var input, button;
 
+var somErro;
+
+
 function preload() {
   bkgImg = loadImage("../RECURSOS/IMAGENS/back-mapa2.png");
   btProxImg = loadImage("../RECURSOS/IMAGENS/seta.png");
@@ -98,6 +101,9 @@ function setup() {
   }
 
 
+  somErro = loadSound("../RECURSOS/AUDIOS/erro.mp3");
+
+  somErro.setVolume(0.7);
 
 
   // blocos[0].tocar();
@@ -288,6 +294,7 @@ class Bloco {
       return true;
     } else {
       console.log("errado");
+      somErro.play();
       return false;
     }
   }
@@ -298,5 +305,6 @@ class Bloco {
 
   tocarErrado() {
     console.log("errado");
+    somErro.play();
   }
 }

@@ -104,6 +104,8 @@ var posInput;
 
 var input, button;
 
+var somErro;
+
 function preload() {
   bkgImg = loadImage("../RECURSOS/IMAGENS/back-mapa2.png");
   btProxImg = loadImage("../RECURSOS/IMAGENS/seta.png");
@@ -137,6 +139,10 @@ function setup() {
     blocos[i] = new Bloco(silabas[i], formasErradas[i], formasCertas[i], palavras[i]);
   }
 
+
+  somErro = loadSound("../RECURSOS/AUDIOS/erro.mp3");
+
+  somErro.setVolume(0.7);
 
 
 
@@ -328,6 +334,7 @@ class Bloco {
       return true;
     } else {
       console.log("errado");
+      somErro.play();
       return false;
     }
   }
@@ -338,5 +345,7 @@ class Bloco {
 
   tocarErrado() {
     console.log("errado");
+    somErro.play();
+
   }
 }

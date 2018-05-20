@@ -58,6 +58,9 @@ var btSomImg;
 
 var tamanhoCirculo = 160;
 
+var somErro;
+
+
 
 function preload() {
 
@@ -82,6 +85,10 @@ function setup() {
   for (var i = 0; i < numBlocos; i++) {
     blocos[i] = new Bloco("listaPalavrasArray", palavras[i], posCerta[i], opcoesPorPalavra[i]);
   }
+
+  somErro = loadSound("../RECURSOS/AUDIOS/erro.mp3");
+
+  somErro.setVolume(0.7);
 
   // blocos[0].tocar();
 
@@ -233,5 +240,6 @@ class Bloco {
 
   tocarErrado() {
     console.log("errado");
+    somErro.play();
   }
 }

@@ -13,6 +13,8 @@ var btProxImg;
 var btProxImgVetor;
 var btSomImg;
 
+var somErro;
+
 function preload() {
 
   casa      = loadImage("../RECURSOS/IMAGENS/CasaF2.png");
@@ -69,6 +71,10 @@ function setup() {
   for(var i = 0; i < numBlocos; i++) {
     blocos[i] = new Bloco(silabas[i], posCerta[i], opcoesPorSilaba[i]);
   }
+
+  somErro = loadSound("../RECURSOS/AUDIOS/erro.mp3");
+  somErro.setVolume(0.7);
+
 
   // blocos[0].tocar();
 
@@ -234,5 +240,7 @@ class Bloco {
 
   tocarErrado() {
     console.log("errado");
+    somErro.play();
+
   }
 }
